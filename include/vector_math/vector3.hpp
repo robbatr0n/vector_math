@@ -89,6 +89,10 @@ template <typename T> class Vector3 {
         return os;
     }
 
+    /**
+     * @brief Operator overload to negate a vector
+     * @return Vector3<T>
+     */
     Vector3<T> operator-() const {
         return Vector3<T>(-x, -y, -z);
     }
