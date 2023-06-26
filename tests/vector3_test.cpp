@@ -66,3 +66,10 @@ TEST(Vector3Test, CheckCrossProduct) {
     EXPECT_EQ(result.y, 1000);
     EXPECT_EQ(result.z, -500);
 }
+
+TEST(Vector3Test, CheckNegateOperator) {
+    Vector3<float> v1(10, 20, 30);
+    EXPECT_EQ(-v1.x, -10);
+    EXPECT_EQ(-v1.y, -20);
+    EXPECT_EQ(-v1.z, -30);
+}

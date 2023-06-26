@@ -79,30 +79,6 @@ template <typename T> class Vector3 {
     }
 
     /**
-     * @brief Operator overload to perform element-wise addition
-     * @param other
-     * @return Vector3<T>
-     */
-    Vector3<T> operator+=(const Vector3 &other) const {
-        x += other.x;
-        y += other.y;
-        z += other.z;
-        return Vector3(x, y, z);
-    }
-
-    /**
-     * @brief Operator overload to perform element-wise multiplication
-     * @param other
-     * @return Vector3<T>
-     */
-    Vector3<T> operator*=(const Vector3 &other) const {
-        x *= other.x;
-        y *= other.y;
-        z *= other.z;
-        return Vector3(x, y, z);
-    }
-
-    /**
      * @brief Operator overload to print a vector to stdout
      * @param os
      * @param vec
@@ -111,6 +87,10 @@ template <typename T> class Vector3 {
     friend std::ostream &operator<<(std::ostream &os, const Vector3<T> &vec) {
         os << "(" << vec.x << ", " << vec.y << ", " << vec.z << ")";
         return os;
+    }
+
+    Vector3<T> operator-() const {
+        return Vector3<T>(-x, -y, -z);
     }
 
     /**
@@ -135,11 +115,3 @@ template <typename T> class Vector3 {
 };
 
 #endif
-
-//////
-// normalize
-// cross
-// dot
-// overload operators
-// vectort length
-// aliases
